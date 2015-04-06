@@ -59,7 +59,7 @@ Choose one of the following options below (e.g. '3'):\n\
                                 print("  %s            %d                    %.2f"%(star_list[i], star, (float(star)/avg_stars)*100))
                                 
 
-                        break_loop = raw_input("")
+                        break_loop = raw_input("Press any key to continue.....")
                 
 
                 if option == "2":
@@ -127,7 +127,7 @@ Choose one of the following options below (e.g. '3'):\n\
                                 print("  %s        %s                 %.2f"%(review_print_list[i], review_count_list[i], (float(review_count_list[i])/rev_count_avg)*100))
 
 
-                        break_loop = raw_input("")
+                        break_loop = raw_input("Press any key to continue.....")
 
                 if option == "3":
                         franchise = raw_input("Enter franchise name: ")
@@ -142,7 +142,7 @@ Choose one of the following options below (e.g. '3'):\n\
 
 
 
-                        break_loop = raw_input("")
+                        break_loop = raw_input("Press any key to continue.....")
 
                 if option == "4":
 
@@ -152,7 +152,7 @@ Choose one of the following options below (e.g. '3'):\n\
 
                         print("Average rating across all users: %s" %avg_all_users)
 
-                        break_loop = raw_input("")
+                        break_loop = raw_input("Press any key to continue.....")
 
 
                 if option == "5":
@@ -182,7 +182,7 @@ Choose one of the following options below (e.g. '3'):\n\
                         print("  4 - 5             %f"%(avg_star_5))
                         
                 
-                        break_loop = raw_input("")
+                        break_loop = raw_input("Press any key to continue.....")
                         
                 if option == "6":
                         
@@ -201,7 +201,7 @@ Choose one of the following options below (e.g. '3'):\n\
                                 user_avg_star, review_year = user_by_year[i]
                                 print ("   %s         %s" %(review_year, user_avg_star))
 
-                        break_loop = raw_input("")
+                        break_loop = raw_input("Press any key to continue.....")
                     
 
 
@@ -212,7 +212,16 @@ Choose one of the following options below (e.g. '3'):\n\
                         cur.close()
                         quit = True
                         
-
+"""
+Slide: Title
+Slide: Describe Yelp , ERD
+Slide: Describe approach of devloping a tool to analze relational information
+Slide: DEMO
+SLIDE: TABLEU graphs
+Slide: Unexpected issues, review table, recsv editor, cleaning data up
+Slide: possible extensions, adding more functionality andmore analysis tools, add data visualization functionality directly from app, export findings
+Slide: CLOSING, QUESTIONS?
+"""
 
 
 main()
