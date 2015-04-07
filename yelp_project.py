@@ -1,10 +1,6 @@
-# project
+# YELP PROJECT
 import cx_Oracle, sys
-
-def lister(name):
-        name = list(name)
-        name = name[0][0]
-        
+     
 def main():
         
         con = cx_Oracle.connect('om', 'om', 'xe')
@@ -76,8 +72,6 @@ Choose one of the following options below (e.g. '3'):\n\
                         rev_count_200 = list(rev_count_200)
                         rev_count_200 = rev_count_200[0][1]
 
-
-                        #FINISH SQL VARIABLES
                         rev_count_300 = cur.execute("SELECT \'300\' AS REVIEW_RANGE, COUNT(*) AS REVIEW_TOTAL FROM BUSINESS WHERE CITY = \'"+input_city+"\' and REVIEW_COUNT BETWEEN 201 AND 300 GROUP BY \'300\'")
                         rev_count_300 = list(rev_count_300)
                         rev_count_300 = rev_count_300[0][1]
@@ -119,8 +113,6 @@ Choose one of the following options below (e.g. '3'):\n\
                         rev_count_avg = rev_count_avg[0][0]
                         rev_count_avg = float(rev_count_avg)
 
-
-
                         #OUTPUT
                         print("Range | Number of Businesses | Percent of Total")
                         for i in range(len(review_count_list)-1):
@@ -140,8 +132,6 @@ Choose one of the following options below (e.g. '3'):\n\
                         print("Average Rating for %s: %f"%(franchise, franch_stars))
                         print("Total Locations of %s Sampled: %d"%(franchise, franch_count))
 
-
-
                         break_loop = raw_input("Press any key to continue.....")
 
                 if option == "4":
@@ -160,7 +150,6 @@ Choose one of the following options below (e.g. '3'):\n\
                         avg_star_2 = cur.execute("SELECT AVG(REVIEW_COUNT) FROM USERS WHERE AVERAGE_STARS < 2")
                         avg_star_2 = list(avg_star_2)
                         avg_star_2 = avg_star_2[0][0]
-                        
                         
                         avg_star_3 = cur.execute("SELECT AVG(REVIEW_COUNT) FROM USERS WHERE AVERAGE_STARS BETWEEN 2 AND 3")
                         avg_star_3 = list(avg_star_3)
@@ -202,26 +191,10 @@ Choose one of the following options below (e.g. '3'):\n\
                                 print ("   %s         %s" %(review_year, user_avg_star))
 
                         break_loop = raw_input("Press any key to continue.....")
-                    
-
-
-                        
+                                         
 
                 if option == "quit" or option == "QUIT" or option == "Quit":
                         print("Quitting application")
                         cur.close()
                         quit = True
-                        
-"""
-Slide: Title
-Slide: Describe Yelp , ERD
-Slide: Describe approach of devloping a tool to analze relational information
-Slide: DEMO
-SLIDE: TABLEU graphs
-Slide: Unexpected issues, review table, recsv editor, cleaning data up
-Slide: possible extensions, adding more functionality andmore analysis tools, add data visualization functionality directly from app, export findings
-Slide: CLOSING, QUESTIONS?
-"""
-
-
 main()
